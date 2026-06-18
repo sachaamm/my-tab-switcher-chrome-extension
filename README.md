@@ -67,6 +67,11 @@ Tu peux **essayer d'assigner F7 / F8 toi-même** depuis
 `chrome://extensions/shortcuts` : selon la version de Chrome, l'interface est
 parfois plus permissive que le manifest et les accepte.
 
+> **Sur macOS**, les touches F1–F12 sont des touches multimédia par défaut. Pour
+> déclencher un vrai F7/F8, tiens la touche <kbd>fn</kbd> en plus, ou active
+> *Réglages Système → Clavier → « Utiliser les touches F1, F2, etc. comme touches
+> de fonction standard »*.
+
 ---
 
 ## Limitations connues
