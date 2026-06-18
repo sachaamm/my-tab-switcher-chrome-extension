@@ -1,0 +1,146 @@
+:root {
+  --bg: #f4f5fb;
+  --card: #ffffff;
+  --ink: #1f2233;
+  --muted: #6b7081;
+  --brand: #4f46e5;
+  --brand-ink: #ffffff;
+  --line: #e6e7f0;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 28px 8px;
+  box-shadow: 0 10px 30px rgba(31, 34, 51, 0.06);
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+.subtitle {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+section {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.shortcuts {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.shortcuts li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.shortcuts li + li {
+  border-top: 1px dashed var(--line);
+}
+
+.shortcuts .loading {
+  color: var(--muted);
+  justify-content: flex-start;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  background: #eef0fb;
+  color: var(--brand);
+  border: 1px solid #dcdef7;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+
+.kbd--empty {
+  background: #f3f4f6;
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+button.primary {
+  appearance: none;
+  border: 0;
+  background: var(--brand);
+  color: var(--brand-ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+button.primary:hover {
+  filter: brightness(1.08);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.bullets li {
+  margin-bottom: 8px;
+}
+
+code,
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+
+kbd {
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+}

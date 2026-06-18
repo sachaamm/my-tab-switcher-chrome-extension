@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tab Switcher — Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header>
+        <h1>My Tab Switcher</h1>
+        <p class="subtitle">
+          Navigue vers l'onglet récent précédent ou suivant grâce à des
+          raccourcis clavier.
+        </p>
+      </header>
+
+      <section>
+        <h2>Raccourcis actuels</h2>
+        <ul id="shortcuts" class="shortcuts">
+          <li class="loading">Chargement…</li>
+        </ul>
+        <button id="open-shortcuts" type="button" class="primary">
+          Modifier les raccourcis
+        </button>
+        <p class="hint">
+          La personnalisation des raccourcis se fait sur la page dédiée de
+          Chrome (<code>chrome://extensions/shortcuts</code>). Le bouton
+          ci-dessus l'ouvre directement.
+        </p>
+      </section>
+
+      <section>
+        <h2>Comment ça marche</h2>
+        <ul class="bullets">
+          <li>
+            L'extension mémorise l'ordre dans lequel tu as consulté tes onglets
+            (historique de récence, façon <em>Alt+Tab</em>), <strong>par
+            fenêtre</strong>.
+          </li>
+          <li>
+            <strong>Précédent</strong> recule dans cet historique ;
+            <strong>suivant</strong> avance. Presser plusieurs fois remonte ou
+            redescend la pile.
+          </li>
+          <li>
+            Cliquer manuellement sur un onglet le replace en tête de
+            l'historique et réinitialise la navigation.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Bon à savoir</h2>
+        <ul class="bullets">
+          <li>
+            Les raccourcis ne sont actifs que lorsqu'une fenêtre Chrome a le
+            focus.
+          </li>
+          <li>
+            Chrome n'autorise pas les touches de fonction « nues » (comme F7/F8)
+            comme valeur par défaut : les défauts utilisent donc un modificateur
+            (<kbd>Alt</kbd>+<kbd>Q</kbd> / <kbd>Alt</kbd>+<kbd>W</kbd>). Tu peux
+            essayer d'assigner F7/F8 toi-même depuis la page des raccourcis ;
+            selon les versions, Chrome peut l'accepter.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

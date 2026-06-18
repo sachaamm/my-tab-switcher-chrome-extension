@@ -1,0 +1,10 @@
+{
+  "name": "my-tab-switcher-chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension to switch to previous/next tab (MRU) with shortcuts",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
