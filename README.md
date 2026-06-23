@@ -1,111 +1,108 @@
-# My Tab Switcher — extension Chrome
+# My Tab Switcher — Chrome extension
 
-Naviguer instantanément vers l'**onglet récent précédent ou suivant** grâce à des
-raccourcis clavier, façon « Alt+Tab pour onglets ».
+Instantly jump to the **previous or next recent tab** with keyboard
+shortcuts, like "Alt+Tab for tabs".
 
-L'extension mémorise l'ordre dans lequel tu consultes tes onglets (historique de
-récence — MRU) **dans chaque fenêtre**, et te laisse remonter / redescendre cette
-pile au clavier.
+The extension remembers the order in which you view your tabs (most-recently-used
+history — MRU) **within each window**, and lets you move up / down that stack
+with the keyboard.
 
-| | Raccourci par défaut | Effet |
+| | Default shortcut | Effect |
 |---|---|---|
-| **Onglet précédent** | <kbd>Alt</kbd>+<kbd>Q</kbd> | Recule dans l'historique de récence |
-| **Onglet suivant** | <kbd>Alt</kbd>+<kbd>W</kbd> | Avance dans l'historique de récence |
+| **Previous tab** | <kbd>Alt</kbd>+<kbd>Q</kbd> | Move back through the recency history |
+| **Next tab** | <kbd>Alt</kbd>+<kbd>W</kbd> | Move forward through the recency history |
 
-> Sur macOS, <kbd>Alt</kbd> correspond à la touche <kbd>Option</kbd> (⌥).
-
----
-
-## Installation (mode développeur)
-
-L'extension n'est pas (encore) publiée sur le Chrome Web Store. Pour l'installer
-localement :
-
-1. Télécharge ou clone ce dépôt.
-2. Ouvre `chrome://extensions` dans Chrome.
-3. Active le **Mode développeur** (interrupteur en haut à droite).
-4. Clique sur **Charger l'extension non empaquetée** et sélectionne le dossier
-   du projet (celui qui contient `manifest.json`).
-5. L'extension apparaît dans la liste ; épingle-la si tu veux son icône dans la
-   barre d'outils.
+> On macOS, <kbd>Alt</kbd> is the <kbd>Option</kbd> (⌥) key.
 
 ---
 
-## Utilisation
+## Installation (developer mode)
 
-1. Navigue entre tes onglets normalement (clic, <kbd>Ctrl</kbd>+<kbd>Tab</kbd>,
-   etc.). L'extension enregistre l'ordre de récence.
-2. Appuie sur <kbd>Alt</kbd>+<kbd>Q</kbd> pour revenir à l'onglet précédemment
-   utilisé. Appuie encore pour remonter plus loin dans l'historique.
-3. Appuie sur <kbd>Alt</kbd>+<kbd>W</kbd> pour ré-avancer dans l'historique.
-4. Dès que tu cliques manuellement sur un onglet, il repasse en tête de
-   l'historique et la navigation repart de là.
+The extension is not (yet) published on the Chrome Web Store. To install it
+locally:
 
-L'historique est **propre à chaque fenêtre** : la navigation ne fait jamais
-changer de fenêtre.
+1. Download or clone this repository.
+2. Open `chrome://extensions` in Chrome.
+3. Enable **Developer mode** (toggle in the top-right corner).
+4. Click **Load unpacked** and select the project folder (the one that
+   contains `manifest.json`).
+5. The extension appears in the list; pin it if you want its icon in the
+   toolbar.
 
 ---
 
-## Personnaliser les raccourcis
+## Usage
 
-Chrome réserve la modification des raccourcis d'extension à une page dédiée.
+1. Switch between your tabs as usual (click, <kbd>Ctrl</kbd>+<kbd>Tab</kbd>,
+   etc.). The extension records the recency order.
+2. Press <kbd>Alt</kbd>+<kbd>Q</kbd> to go back to the previously used tab.
+   Press again to move further back through the history.
+3. Press <kbd>Alt</kbd>+<kbd>W</kbd> to move forward through the history again.
+4. As soon as you manually click a tab, it moves back to the top of the
+   history and navigation resumes from there.
 
-- **Le plus simple :** clic droit sur l'icône de l'extension → **Options**, puis
-  bouton **« Modifier les raccourcis »**.
-- **Directement :** ouvre `chrome://extensions/shortcuts`, trouve *My Tab
-  Switcher* et clique sur le crayon en face de chaque commande pour saisir ta
-  combinaison.
+The history is **specific to each window**: navigation never switches between
+windows.
 
-### Pourquoi pas F7 / F8 par défaut ?
+---
 
-L'API native de Chrome (`chrome.commands`) **impose un modificateur**
-(<kbd>Ctrl</kbd> ou <kbd>Alt</kbd>) et n'accepte pas les touches de fonction
-nues comme valeur par défaut dans le manifest. Les défauts utilisent donc
+## Customizing the shortcuts
+
+Chrome restricts changing extension shortcuts to a dedicated page.
+
+- **Easiest:** right-click the extension icon → **Options**, then the
+  **"Edit shortcuts"** button.
+- **Directly:** open `chrome://extensions/shortcuts`, find *My Tab Switcher*
+  and click the pencil next to each command to enter your combination.
+
+### Why not F7 / F8 by default?
+
+Chrome's native API (`chrome.commands`) **requires a modifier**
+(<kbd>Ctrl</kbd> or <kbd>Alt</kbd>) and does not accept bare function keys as a
+default value in the manifest. The defaults therefore use
 <kbd>Alt</kbd>+<kbd>Q</kbd> / <kbd>Alt</kbd>+<kbd>W</kbd>.
 
-Tu peux **essayer d'assigner F7 / F8 toi-même** depuis
-`chrome://extensions/shortcuts` : selon la version de Chrome, l'interface est
-parfois plus permissive que le manifest et les accepte.
+You can **try to assign F7 / F8 yourself** from
+`chrome://extensions/shortcuts`: depending on the Chrome version, the interface
+is sometimes more permissive than the manifest and accepts them.
 
-> **Sur macOS**, les touches F1–F12 sont des touches multimédia par défaut. Pour
-> déclencher un vrai F7/F8, tiens la touche <kbd>fn</kbd> en plus, ou active
-> *Réglages Système → Clavier → « Utiliser les touches F1, F2, etc. comme touches
-> de fonction standard »*.
-
----
-
-## Limitations connues
-
-- Les raccourcis ne sont actifs que lorsqu'une fenêtre Chrome a le focus.
-- La personnalisation des touches passe par la page Chrome dédiée (limite de
-  l'API native).
-- L'historique de récence est volatile : il est réinitialisé lorsque la session
-  du navigateur se termine.
+> **On macOS**, the F1–F12 keys are media keys by default. To trigger a real
+> F7/F8, also hold the <kbd>fn</kbd> key, or enable *System Settings → Keyboard →
+> "Use F1, F2, etc. keys as standard function keys"*.
 
 ---
 
-## Développement
+## Known limitations
 
-Le projet n'a **aucune dépendance de production**. La logique métier est isolée
-dans un module pur et testable.
+- The shortcuts are only active while a Chrome window has focus.
+- Customizing the keys goes through Chrome's dedicated page (a limitation of the
+  native API).
+- The recency history is volatile: it is reset when the browser session ends.
+
+---
+
+## Development
+
+The project has **no production dependencies**. The business logic is isolated
+in a pure, testable module.
 
 ```bash
-npm test                    # lance les tests unitaires (node --test)
-node tools/generate-icons.mjs   # régénère les icônes PNG
+npm test                    # run the unit tests (node --test)
+node tools/generate-icons.mjs   # regenerate the PNG icons
 ```
 
-- `manifest.json` — déclaration de l'extension (Manifest V3).
-- `src/mru.js` — logique pure de l'historique de récence (sans API Chrome).
-- `src/service-worker.js` — câblage des évènements Chrome + persistance.
-- `src/options.*` — page d'options.
-- `tests/mru.test.js` — tests unitaires de la logique MRU.
-- `tools/generate-icons.mjs` — générateur d'icônes.
+- `manifest.json` — extension declaration (Manifest V3).
+- `src/mru.js` — pure recency-history logic (no Chrome API).
+- `src/service-worker.js` — wiring of Chrome events + persistence.
+- `src/options.*` — options page.
+- `tests/mru.test.js` — unit tests for the MRU logic.
+- `tools/generate-icons.mjs` — icon generator.
 
-Pour les détails de conception, voir [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-et le document de design dans `docs/superpowers/specs/`.
+For design details, see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) and the
+design document in `docs/superpowers/specs/`.
 
 ---
 
-## Licence
+## License
 
 MIT.
